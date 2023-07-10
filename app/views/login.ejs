@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+
+<% if (locals.error) { %>
+<div class="alert alert-danger" role="alert">
+    <%= error %>
+</div>
+<% } %>
+
+<% if (locals.registered && locals.registered === "true") { %>
+    <div class="alert alert-success text-center" role="alert">
+        Account created ! You may now log in !
+      </div>      
+<% } %>
+
+<% if (locals.registered && locals.registered === "false") { %>
+    <div class="alert alert-danger text-center" role="alert">
+        You have to be logged in to submit a recipe
+      </div>      
+<% } %>
+
+<div class="container">
+    <div class="col-6 ms-auto me-auto mt-4">
+        <form action="/login" method="POST">
+            <label class="form-label h4" for="email">Email</label>
+            <input class="form-control mb-4" type="email" id="email" name="email" placeholder="email@domain.com">
+
+            <label class="form-label h4" for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="password" placeholder="*********">
+
+            <input class="btn btn-secondary d-block my-4 mx-auto" type="submit" value="Log in">
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<%- include('partials/footer') %>

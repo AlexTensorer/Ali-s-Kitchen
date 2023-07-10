@@ -1,0 +1,22 @@
+<%- include ('partials/header') %>
+
+<main class="d-flex text-center px-5 mb-5">
+    <article class="row g-2 justify-content-center">
+        
+            <% for (const recipe of recipes) { %>
+                <figure class="col-md-6 col-xl-4 col-xxl-3 px-4">
+                    <img style="border-radius: 1%; width: 600px; height: 400px; object-fit: cover;" class="img-fluid"
+                        src="<%= recipe.image %>" alt="">
+                    <div class="fs-4 pt-2 ps-7 pe-7 pb-2"
+                        style="text-decoration: none; color: inherit; background-color: rgba(238, 210, 176, 0.2);">
+                        <a style="text-decoration: none; color: inherit;" href="<%=recipe.link%>" target="_blank"><%= recipe.title %></a>
+                        <div class="text-secondary" style="font-size: small; font-style: italic;"><%= recipe.website %></div>
+                        <div class="text-secondary mt-2" style="font-size: small;"><%= recipe.body %></div>
+                    </div>
+                </figure>
+                <% } %>                  
+
+    </article>
+</main>
+
+<%- include ('partials/footer') %>

@@ -1,0 +1,24 @@
+<%- include ('partials/header') %>
+
+<div class="container">
+    <div class="col-6 ms-auto me-auto mt-4">
+        <form action="/signup" method="POST" class="inline">
+            <label class="form-label h4" for="username">Username</label>
+            <input class="form-control mb-4" type="text" id="username" name="username" placeholder="Username">
+
+            <label class="form-label h4" for="email">Email</label>
+            <input class="form-control mb-4" type="email" id="email" name="email" placeholder="email@domain.com">
+
+            <label class="form-label h4" for="password">Password</label>
+            <input class="form-control mb-4" type="password" id="password" name="password" placeholder="*********">
+
+            <label class="form-label h4" for="confirmation">Confirm Password</label>
+            <input class="form-control mb-4" type="password" id="confirmation" name="confirmation" placeholder="*********">
+
+            <input class="btn btn-secondary d-block my-4 mx-auto" type="submit" value="Sign up">
+        </form>
+    </div>
+</div>
+
+
+<%- include ('partials/footer') %>

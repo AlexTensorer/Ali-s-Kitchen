@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1 class="my-3">Welcome to your profile <%= user.username %></h1>
+
+<% if (locals.user) { %>
+
+  <label class="form-label h4" for="username">Username</label>
+  <input class="form-control mb-4" type="text" disabled id="firstname" value="<%= user.username %>">
+
+
+  <label class="form-label h4" for="email">Email</label>
+  <input class="form-control mb-4" type="text" disabled id="email" value="<%= user.email %>">
+<% } else { %>
+
+  <a href="/">Retour page d'accueil</a>
+<% }%>
+</div>
+
+
+<%- include('partials/footer') %>
+
+// Dropdown Account profile + logout

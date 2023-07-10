@@ -1,0 +1,55 @@
+<%- include ('partials/header') %>
+
+
+<div class="container">
+    <h1 class="text-center">Submit New Recipe</h1>
+    <div class="col-6 ms-auto me-auto mt-4">
+        <form action="/submit" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="title" placeholder="Title Of The Recipe"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="website">Website</label>
+                <input class="form-control" type="text" id="website" name="website" placeholder="nameofthewebsite.com"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="link">Recipe URL</label>
+                <input class="form-control" type="text" id="link" name="link"
+                    placeholder="https://www.website.com/recipe/" required>
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" id="image" name="image"
+                    placeholder="https://www.website.com/recipe/image.jpg/png/webp..." required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="body">Description</label>
+                <textarea class="form-control" type="text" id="body" name="body"
+                    placeholder="Description of the recipe" required></textarea>
+
+                <div class="mb-3">
+                    <label class="form-label" for="user_id">User_Id</label>
+                    <input class="form-control" type="number" id="user_id" name="user_id" placeholder="1" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="category_id">Category_Id</label>
+                    <input class="form-control" type="number" id="category_id" name="category_id" placeholder="1"
+                        required>
+                </div>
+
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-secondary d-block my-4 mx-auto">Add Recipe</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<%- include ('partials/footer') %>
