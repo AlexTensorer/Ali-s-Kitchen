@@ -10,6 +10,7 @@ const submitController = {
   submitRecipe: async (req, res) => {
     try {
       const { title, image, body, link, website, category_id, user_id } = req.body;
+      const category = req.body.category_id
 
         let newRecipe = Recipe.build({
           title,
@@ -21,7 +22,7 @@ const submitController = {
           user_id,
         });
         await newRecipe.save();
-        res.render("submit")
+        res.redirect(`/category/${category}`)
       } catch (error) {
         console.trace(error)
         res.status(500).send(error)

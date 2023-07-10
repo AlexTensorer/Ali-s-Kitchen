@@ -2,9 +2,10 @@
 
 <main class="d-flex text-center px-5 mb-5">
     <article class="row g-2 justify-content-center">
-        
+
+              
             <% for (const recipe of recipes) { %>
-                <figure class="col-md-6 col-xl-4 col-xxl-3 px-4">
+                <figure class="col-md-3 col-xl-4 col-xxl-3 px-4">
                     <img style="border-radius: 1%; width: 600px; height: 400px; object-fit: cover;" class="img-fluid"
                         src="<%= recipe.image %>" alt="">
                     <div class="fs-4 pt-2 ps-7 pe-7 pb-2"
@@ -12,6 +13,15 @@
                         <a style="text-decoration: none; color: inherit;" href="<%=recipe.link%>" target="_blank"><%= recipe.title %></a>
                         <div class="text-secondary" style="font-size: small; font-style: italic;"><%= recipe.website %></div>
                         <div class="text-secondary mt-2" style="font-size: small;"><%= recipe.body %></div>
+
+                        <script>
+                            if (window.innerWidth <= 767) {
+                                // Apply styles for mobile
+                                const container = document.querySelector('.fs-4');
+                                container.style.fontSize = 'smaller';
+                                // Add any other mobile-specific styles here
+                            }
+                        </script>
                     </div>
                 </figure>
                 <% } %>                  

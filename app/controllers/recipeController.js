@@ -10,6 +10,7 @@ const recipeController = {
                 { where: {
                     category_id: categoryId
                 },
+
         }
         );
         const users = await User.findAll()
