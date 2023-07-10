@@ -2,4 +2,5 @@
 
 ## homePage
 
-[Imgur](https://i.imgur.com/JPU6x0P.jpg)
+<img src="https://i.imgur.com/JPU6x0P.jpg" alt="Home Page Image">
+
