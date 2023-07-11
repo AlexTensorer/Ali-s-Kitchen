@@ -95,7 +95,7 @@ const authController = {
 
             if (!existsUser) {
                 return res.render('login', {
-                    message: "Email or password incorrect",
+                    error: "Email or password incorrect",
                 });
             }
 
@@ -121,7 +121,7 @@ const authController = {
         req.session.userId = null;
         req.session.destroy();
 
-        res.redirect('/');
+        res.redirect('/?logged=false');
     }
 
 }

@@ -1,4 +1,4 @@
-const { Category, Recipe, User } = require("../models");
+const { Recipe } = require("../models");
 
 const submitController = {
 
@@ -9,7 +9,12 @@ const submitController = {
 
   submitRecipe: async (req, res) => {
     try {
-      const { title, image, body, link, website, category_id, user_id } = req.body;
+      
+      const user_id = req.session.userId;
+      const { title, image, body, link, website, category_id } = req.body;
+
+
+      console.log('LOOK HERE', req.body)
 
         let newRecipe = Recipe.build({
           title,
@@ -20,6 +25,7 @@ const submitController = {
           category_id,
           user_id,
         });
+
         await newRecipe.save();
         res.redirect(`/category/${req.body.category_id}`)
       } catch (error) {

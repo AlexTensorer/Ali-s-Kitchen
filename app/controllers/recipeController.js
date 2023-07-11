@@ -1,47 +1,48 @@
-const { Category, Recipe, User } = require('../models')
+const { Category, Recipe, User } = require("../models");
 
 const recipeController = {
+  showRecipesInCategory: async (req, res) => {
+    try {
+      const categoryId = req.params.category_id;
 
-    showRecipesInCategory: async (req, res) => {
-        try {
-            const categoryId = req.params.id
+      const recipes = await Recipe.findAll({
+        where: {
+          category_id: categoryId,
+        },
+        include: {model : User, as: 'user'},
 
-            const recipes = await Recipe.findAll(
-                { where: {
-                    category_id: categoryId
-                },
+      });
 
-        }
-        );
-        const users = await User.findAll()
+      const category = await Category.findByPk(categoryId)
 
-            const categories = await Category.findAll();
+      res.render("recipesByCategory", {
+        recipes,
+        category,
+      });
 
-            res.render('recipes', {
-                categories,
-                recipes,
-                users
-            });
-        } catch (err) {
-            console.log(err);
-            res.status(500).send('Server Error')
-        }
-    },
+      console.log(author);
 
-    allRecipes: async (req, res) => {
-        try {
-            const recipes = await Recipe.findAll();
-            const categories = await Category.findAll();
+    } catch (err) {
+      console.log(err);
+      res.status(500).render("500");
+    }
+  },
 
-            res.render('recipes', {
-                categories,
-                recipes
-            });
-        } catch (err) {
-            console.log(err);
-            res.status(500).send('Server Error')
-        }
-    },
-}
+  allRecipes: async (req, res) => {
+    try {
+      const recipes = await Recipe.findAll({
+        include : {model : Category, as: 'category'},
+        include : {model : User, as: 'user'}
+      });
+
+      res.render("allRecipes", {
+        recipes
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).render("500");
+    }
+  },
+};
 
 module.exports = recipeController;

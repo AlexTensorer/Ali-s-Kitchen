@@ -8,10 +8,9 @@ User.init({
     email: DataTypes.TEXT,
     password: DataTypes.TEXT,
     role: DataTypes.TEXT,
-    username: DataTypes.TEXT,
 }, {
     sequelize,
-    tableName: "users"
+    tableName: "user"
 });
 
 module.exports = User;

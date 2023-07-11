@@ -29,20 +29,29 @@
 
             <div class="mb-3">
                 <label class="form-label" for="body">Description</label>
-                <textarea class="form-control" type="text" id="body" name="body"
-                    placeholder="Description of the recipe" required></textarea>
-
-                <div class="mb-3">
-                    <label class="form-label" for="user_id">User_Id</label>
-                    <input class="form-control" type="number" id="user_id" name="user_id" placeholder="1" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="category_id">Category_Id</label>
-                    <input class="form-control" type="number" id="category_id" name="category_id" placeholder="1"
-                        required>
-                </div>
-
+                <textarea class="form-control" type="text" id="body" name="body" placeholder="Description of the recipe"
+                    required></textarea>
             </div>
+
+            
+            <div class="mb-3">
+                <label class="form-label" for="category_id">Category</label>
+                <select class="form-control" id="category_id", name="category_id">
+                    <option></option>
+                    <option value="1">Pasta</option>
+                    <option value="2">Vegetarian</option>
+                    <option value="3">Salad</option>
+                    <option value="4">Asian</option>
+                    <option value="5">Barbecue</option>
+                    <option value="6">Traditional</option>
+                    <option value="7">Indian</option>
+                    <option value="8">Healthy</option>
+                    <option value="9">Mexican</option>
+                    <option value="10">Drinks & Cocktails</option>
+                    <option value="11">Desserts</option>
+                </select>
+            </div>
+            
             <div class="mb-3">
                 <button class="btn btn-secondary d-block my-4 mx-auto">Add Recipe</button>
             </div>

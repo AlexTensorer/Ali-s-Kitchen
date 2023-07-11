@@ -8,7 +8,8 @@ const submitController = require('./controllers/submitController');
 
 const router = Router();
 
-const { isLoggedIn, isAdmin } = require('../middlewares/isLoggedIn.js');
+const { isLoggedIn } = require('../middlewares/isLoggedIn.js');
+const { initSession } = require('../middlewares/initSession.js');
 
 
 // Homepage
@@ -18,7 +19,7 @@ router.get('/', homeController.homePage);
 // Recipes
 
 router.get('/recipes', recipeController.allRecipes)
-router.get('/category/:id', recipeController.showRecipesInCategory)
+router.get('/category/:category_id', recipeController.showRecipesInCategory)
 
 // Auth
 
@@ -34,7 +35,7 @@ router.get('/logout', authController.destroy)
 // Submit
 
 router.get('/submit', isLoggedIn, submitController.submitPage)
-router.post('/submit', submitController.submitRecipe)
+router.post('/submit', initSession, submitController.submitRecipe)
 
 
 

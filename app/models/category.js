@@ -8,7 +8,7 @@ Category.init({
     image: DataTypes.TEXT,
 }, {
     sequelize,
-    tableName: "categories"
+    tableName: "category"
 });
 
 module.exports = Category;

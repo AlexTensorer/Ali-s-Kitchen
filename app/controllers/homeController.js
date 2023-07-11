@@ -1,15 +1,16 @@
-const { Category, Recipe } = require('../models')
+const { Category } = require('../models')
 
 const homeController = {
 
     homePage: async (req, res) => {
         try {
-            const recipes = await Recipe.findAll();
-            const categories = await Category.findAll();
+            const category = await Category.findAll({
+            });
+
+            console.log(category);
 
             res.render('home', {
-                categories,
-                recipes
+                category                
             });
         } catch (err) {
             console.log(err);

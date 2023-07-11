@@ -13,7 +13,7 @@ Recipe.init({
     category_id: DataTypes.INTEGER
 }, {
     sequelize,
-    tableName: "recipes"
+    tableName: "recipe"
 });
 
 module.exports = Recipe;
