@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node .",
     "dev": "npx nodemon",
+    "build": "vite build",
     "db:reset": "psql -U alextensorer -d aliskitchen -f ./data/create_and_seed_tables.sql"
   },
   "devDependencies": {
