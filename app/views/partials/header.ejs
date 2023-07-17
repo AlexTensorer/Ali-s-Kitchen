@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+    </script>
+    <title>Ali's Kitchen</title>
+</head>
+
+<body class="d-flex flex-column vh-100" style="font-family: 'Montserrat', sans-serif">
+    <div class="container">
+
+
+        <nav class="navbar border-bottom navbar-expand-lg mb-5">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-1" href="/" style="letter-spacing: 4px; font-weight: 600;">ALI'S KITCHEN</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <% if (!locals.user) { %>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="/login">Log in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="/signup">Sign up</a>
+                        </li>
+                        <% } else { %>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <%= user.username %>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/profile">Your profile</a></li>
+                                <li><a class="dropdown-item" href="/logout">Log out</a></li>
+                            </ul>
+                        </li>
+                        <% } %>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="/submit">Submit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="/recipes">See All Recipes</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex mb-2" role="search" action="/search" method="GET">
+                        <input class="form-control me-2" type="search" name="keyword" placeholder="I want to eat..."
+                            aria-label="Search" required>
+                        <button class="btn btn-outline-secondary" type="submit">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"
+                                xml:space="preserve">
+                                <path
+                                    d="M207.103 23.875v109.219c0 7-5.656 12.641-12.625 12.641h-3.375c-6.969 0-12.641-5.641-12.641-12.641V23.375c0-18-12.109-23.375-23.719-23.375s-23.719 5.375-23.719 23.375v109.719c0 7-5.672 12.641-12.641 12.641h-3.375c-6.969 0-12.625-5.641-12.625-12.641V23.875c0-32.219-45.938-31.125-45.938.359v104.297c-.219 57.906 13.625 72.953 36.469 91 18.422 14.531 34.156 22.859 34.156 58.953v232.188h55.344V278.484c0-36.094 15.734-44.422 34.156-58.953 22.859-18.047 36.688-33.094 36.469-91V24.234c.001-31.484-45.936-32.578-45.936-.359zM385.228 34.75c-11.75 32.953-45.578 110.156-47.719 178.344-3.313 105.844 61.547 90.188 62.703 159.531v138.688h55.078l.266.688V34.751c0-40.189-52.032-51.282-70.328-.001z"
+                                    style="fill:#000" /></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+    </div>

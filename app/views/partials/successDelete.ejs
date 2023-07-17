@@ -1,0 +1,34 @@
+<% if (successFlash && successFlash.length > 0) { %>
+  <div class="alert alert-success text-center" id="success-flash">
+    <%= successFlash[0] %>
+  </div>
+<% } %>
+
+<% if (errorFlash && errorFlash.length > 0) { %>
+  <div class="alert alert-danger text-center" id="error-flash">
+    <%= errorFlash[0] %>
+  </div>
+<% } %>
+
+<script>
+  setTimeout(() => {
+    const successFlash = document.getElementById('success-flash');
+    const errorFlash = document.getElementById('error-flash');
+
+    if (successFlash) {
+      successFlash.style.transition = 'opacity 0.5s';
+      successFlash.style.opacity = 0;
+      setTimeout(() => {
+        successFlash.remove();
+      }, 500);
+    }
+
+    if (errorFlash) {
+      errorFlash.style.transition = 'opacity 0.5s';
+      errorFlash.style.opacity = 0;
+      setTimeout(() => {
+        errorFlash.remove();
+      }, 500);
+    }
+  }, 3000);
+</script>

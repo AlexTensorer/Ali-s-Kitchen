@@ -1,0 +1,65 @@
+<%- include ('partials/header') %>
+
+
+<div class="container-fluid">
+    <h2 class="text-center">Submit New Recipe</h2>
+    <div class="col-6 ms-auto me-auto mt-4">
+        <form action="/submit" method="POST"
+        style="border: 1px solid rgba(139, 139, 139, 0.493); padding: 25px; margin-bottom: 50px; box-shadow: 0.5px 1px 7px 0px rgba(0,0,0,0.29);">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="title" placeholder="Title Of The Recipe"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="website">Website</label>
+                <input class="form-control" type="text" id="website" name="website" placeholder="nameofthewebsite.com"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="link">Recipe URL</label>
+                <input class="form-control" type="text" id="link" name="link"
+                    placeholder="https://www.website.com/recipe/" required>
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" id="image" name="image"
+                    placeholder="https://www.website.com/recipe/image.jpg/png/webp..." required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="body">Description</label>
+                <textarea class="form-control" type="text" id="body" name="body" placeholder="Description of the recipe"
+                    required></textarea>
+            </div>
+
+            
+            <div class="mb-3">
+                <label class="form-label" for="category_id">Category</label>
+                <select class="form-control" id="category_id", name="category_id">
+                    <option></option>
+                    <option value="1">Pasta</option>
+                    <option value="2">Mexican</option>
+                    <option value="3">Salad</option>
+                    <option value="4">Asian</option>
+                    <option value="5">Barbecue</option>
+                    <option value="6">Traditional</option>
+                    <option value="7">Indian</option>
+                    <option value="8">Healthy</option>
+                    <option value="9">Vegetarian</option>
+                    <option value="10">Drinks & Cocktails</option>
+                    <option value="11">Desserts</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <button class="btn btn-secondary d-block my-4 mx-auto">Add Recipe</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<%- include ('partials/footer') %>

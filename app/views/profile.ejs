@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1 class="d-flex muted mb-4 mt-2"
+  style="letter-spacing: 4px; text-transform: uppercase;">Welcome to your profile <%= user.username %></h1>
+
+
+  <main class="d-flex justify-content-around mt-5">
+
+    <div class="d-flex flex-column">
+      <% if (locals.user) { %>
+
+      <label class="form-label h4 muted" style="letter-spacing: 2px;" for="username">Username</label>
+      <input class="form-control mb-4" type="text" disabled id="firstname" value="<%= user.username %>">
+
+      <label class="form-label h4 muted" style="letter-spacing: 2px;" for="email">Email</label>
+      <input class="form-control mb-4" type="text" disabled id="email" value="<%= user.email %>">
+      <% } %>
+
+    </div>
+
+    <div>
+      <article class="d-flex flex-column">
+      <h3 class="form-label h4 muted" style="letter-spacing: 2px;">Your recipes</h3>
+        <% for (const recipe of recipes) { %>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li>
+            <a class="fs-5 ps-4 pe-4 pb-1"
+              style="text-decoration: none; color: inherit; background-color: rgba(238, 210, 176, 0.5); "
+              href="/category/<%=recipe.category_id%>"><%= recipe.title %></a>
+          </li>
+        </ul>
+        <% } %>
+      </article>
+    </div>
+
+  </main>
+
+</div>
+
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,64 @@
+<%- include ('partials/header') %>
+
+
+<div class="container">
+    <h1 class="text-center">Edit Your Recipe</h1>
+    <div class="col-6 ms-auto me-auto mt-4">
+        <form action="/category/recipe/edit/<%= recipe.id %>?_method=PUT" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="title" value="<%= recipe.title%>"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="website">Website</label>
+                <input class="form-control" type="text" id="website" name="website" value="<%= recipe.website %>"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="link">Recipe URL</label>
+                <input class="form-control" type="text" id="link" name="link"
+                    value="<%= recipe.link %>" required>
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" id="image" name="image"
+                    value="<%= recipe.image %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="body">Description</label>
+                <textarea class="form-control" type="text" id="body" name="body"
+                    required><%= recipe.body %></textarea>
+            </div>
+
+            
+            <div class="mb-3">
+                <label class="form-label" for="category_id">Category</label>
+                <select class="form-control" id="category_id", name="category_id" required>
+                    <option></option>
+                    <option value="1">Pasta</option>
+                    <option value="2">Vegetarian</option>
+                    <option value="3">Salad</option>
+                    <option value="4">Asian</option>
+                    <option value="5">Barbecue</option>
+                    <option value="6">Traditional</option>
+                    <option value="7">Indian</option>
+                    <option value="8">Healthy</option>
+                    <option value="9">Mexican</option>
+                    <option value="10">Drinks & Cocktails</option>
+                    <option value="11">Desserts</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <button class="btn btn-secondary d-block my-4 mx-auto">Edit Recipe</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<%- include ('partials/footer') %>

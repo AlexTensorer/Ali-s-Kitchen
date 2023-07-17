@@ -1,0 +1,27 @@
+<%- include ('partials/header') %>
+
+<h2 class="mb-3 d-flex justify-content-center">Search Results for "<%= keyword %>"</h1>
+
+<main class="d-flex text-center px-5 mb-5">
+  <article class="row g-3 justify-content-center">
+    <% if (recipes.length > 0) { %>
+      <% for (const recipe of recipes) { %>
+        <div class="col-md-6 col-xl-4 col-xxl-3 px-4">
+          <figure>
+            <img style="padding-top: 8px; width: 100%; height: 400px; object-fit: cover; box-sizing: border-box;" src="<%= recipe.image %>" alt="">
+            <div class="fs-4 pt-2 ps-7 pe-7 pb-2" style="text-decoration: none; color: inherit;">
+              <a class="fs-4 ps-4 pe-4 pb-1" style="text-decoration: none; color: inherit; background-color: rgba(238, 210, 176, 0.5); " href="<%= recipe.link %>" target="_blank"><%= recipe.title %></a>
+              <div class="text-secondary" style="font-size: small; font-style: italic;"><%= recipe.website %></div>
+              <div class="text-secondary mt-2" style="font-size: small;"><%= recipe.body %></div>
+              <div class="text-secondary mt-2" style="font-size: small;">Submitted by <%= recipe.user.username %></div>
+            </div>
+          </figure>
+        </div>
+      <% } %>
+    <% } else { %>
+      <p class="d-flex justify-content-center">No recipes found for "<%= keyword %>"</p>
+    <% } %>
+  </article>
+</main>
+
+<%- include ('partials/footer') %>
