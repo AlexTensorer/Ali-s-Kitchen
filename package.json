@@ -4,9 +4,9 @@
   "description": "## npm init",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
+    "start": "nodemon index",
     "dev": "npx nodemon",
-    "build": "ng build",
+    "build": "npm install",
     "db:reset": "psql -U alextensorer -d aliskitchen -f ./data/create_and_seed_tables.sql"
   },
   "devDependencies": {
