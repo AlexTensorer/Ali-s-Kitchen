@@ -44,22 +44,22 @@
                             <a class="nav-link text-center" href="/signup">Sign up</a>
                         </li>
                         <% } else { %>
-                        <li class="nav-item dropdown text-center">
+                        <li class="nav-item dropdown text-center" style="font-size: 14px;">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <%= user.username %>
                             </a>
                             <ul class="dropdown-menu text-center">
-                                <li><a class="dropdown-item" href="/profile">Your profile</a></li>
-                                <li><a class="dropdown-item" href="/logout">Log out</a></li>
+                                <li style="font-size: 14px;"><a class="dropdown-item" href="/profile">Your profile</a></li>
+                                <li style="font-size: 14px;"><a class="dropdown-item" href="/logout">Log out</a></li>
                             </ul>
                         </li>
                         <% } %>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="/submit">Submit</a>
+                            <a class="nav-link text-center" style="font-size: 14px;" href="/submit">Submit</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="/recipes">See All Recipes</a>
+                            <a class="nav-link text-center" style="font-size: 14px;"" href="/recipes">See All Recipes</a>
                         </li>
                     </ul>
 
@@ -80,3 +80,4 @@
         </nav>
 
     </div>
+

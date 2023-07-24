@@ -20,23 +20,34 @@
 <% } %>
 
 <div class="container">
-    <div class="col-6 ms-auto me-auto mt-4">
+    <div class="col-11 ms-auto me-auto mt-4">
         <form action="/login" method="POST"
             style="border: 1px solid rgba(139, 139, 139, 0.493); padding: 25px; box-shadow: 0.5px 1px 7px 0px rgba(0,0,0,0.29);">
-            <label class="form-label h5 muted" style="letter-spacing: 1px;" for="email">Email</label>
+            <label class="form-label muted" style="letter-spacing: 1px;" for="email">Email</label>
             <input class="form-control mb-4" type="email" id="email" name="email" placeholder="email@domain.com">
 
-            <label class="form-label h5 muted" style="letter-spacing: 1px;" for="password">Password</label>
+            <label class="form-label muted" style="letter-spacing: 1px;" for="password">Password</label>
             <input class="form-control" type="password" id="password" name="password" placeholder="*********">
 
             <input class="btn btn-secondary d-block mt-4 mb-2 mx-auto" type="submit" value="Log in">
-            <footer style="display: flex; align-items: center; flex-direction: column; font-size: small;">
+            <footer style="display: flex; align-items: center; flex-direction: column; font-size: 10px;">
                 <div>Don't have an account?</div>
                 <a href="/signup" style="color: inherit;"> Sign up</a>
             </footer>
         </form>
     </div>
 </div>
+
+<style>
+    /* Media query for screens under 600px */
+    @media (max-width: 600px) {
+
+        .container {
+            color: blue;
+        }
+                
+    }
+</style>
 
 
 
