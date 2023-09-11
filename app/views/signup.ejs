@@ -13,6 +13,7 @@
                 <div class="d-flex justify-content-center align-items-center">
                     <%= error %>
                 </div>
+                </div>
           <% } %>
 
 
@@ -24,7 +25,18 @@
             <input class="form-control mb-4" type="email" id="email" name="email" placeholder="email@domain.com">
 
             <label class="form-label muted" style="letter-spacing: 1px;" for="password">Password</label>
-            <input class="form-control mb-4" type="password" id="password" name="password" placeholder="*********">
+            <input class="form-control" type="password" id="password" name="password" placeholder="*********">
+            <div class="d-flex flex-column mt-2">
+            <div style="font-size:x-small;">Password must contain</div>
+            <div style="font-size:x-small;">1 uppercase</div>
+            <div style="font-size:x-small;">1 lowercase</div>
+            <div style="font-size:x-small;">1 special character</div>
+            <div class="mb-4" style="font-size:x-small;">min 8 characters</div>
+            </div>
+
+
+
+            
 
             <label class="form-label muted" style="letter-spacing: 1px;" for="confirmation">Confirm Password</label>
             <input class="form-control mb-4" type="password" id="confirmation" name="confirmation"
